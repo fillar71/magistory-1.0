@@ -1,0 +1,28 @@
+# Dependencies & Build Outputs
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Version Control & IDE
+.git/
+.vscode/
+.idea/
+
+# Environment & Secrets (Sangat Penting untuk Keamanan)
+.env*
+*.local
+secrets.json
+
+# Logs & Temporary Files
+*.log
+npm-debug.log*
+tmp/
+temp/
+
+# Media & Assets Besar
+*.mp4
+*.wav
+*.zip
+public/assets/videos/  # Contoh jika proyek video seperti Magistory

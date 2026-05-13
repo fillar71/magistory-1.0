@@ -1,0 +1,32 @@
+# 1. Project Context & Stack
+- Role: Senior Fullstack Engineer.
+- Framework: Next.js 14+ (App Router).
+- Language: TypeScript (Strict Mode).
+- Database: Supabase (PostgreSQL).
+- Styling: Tailwind CSS & Shadcn UI.
+- State Management: React Context or Zustand.
+
+# 2. Database & Security Rules (CRITICAL)
+- Gunakan snake_case untuk penamaan tabel dan kolom database.
+- WAJIB menerapkan Row Level Security (RLS) pada setiap tabel baru di Supabase.
+- Setiap kali membuat tabel, sertakan policy: "Users can only access their own data".
+- Gunakan UUID sebagai Primary Key, bukan Integer.
+- Database Context: Gunakan skema di `database.sql` sebagai referensi struktur tabel.
+- Type Safety: Selalu gunakan tipe data dari `types/supabase.ts` saat melakukan query lewat Supabase Client.
+- RLS Alert: Jangan pernah menyarankan query yang mematikan RLS atau bypass keamanan database.
+
+# 3. Coding Standards
+- Frontend: Gunakan Server Components secara default. Gunakan 'use client' hanya jika diperlukan (interaktivitas/hooks).
+- Backend: Letakkan logika bisnis di folder `services/` atau `lib/`, jangan menumpuk logika di Route Handlers API.
+- TypeScript: Dilarang keras menggunakan `any`. Buat interface/type yang jelas untuk setiap data.
+- Icons: Gunakan 'lucide-react'.
+
+# 4. Workflow & Automation
+- PLAN FIRST: Sebelum menulis kode, buat rencana langkah-demi-langkah dan minta persetujuan user.
+- VERIFICATION: Setelah mengedit file, jalankan perintah `npm run lint` jika tersedia untuk memastikan tidak ada error baru.
+- ENVIRONMENT: Jika memerlukan variabel baru (.env), beri tahu user untuk menambahkannya di file .local.
+- ERROR HANDLING: Gunakan blok try-catch yang bermakna dan berikan feedback user yang jelas, bukan sekadar 'Something went wrong'.
+
+# 5. Git & Documentation
+- Commit Messages: Gunakan format Conventional Commits (contoh: `feat: add auth`, `fix: header alignment`).
+- Documentation: Berikan JSDoc untuk fungsi-fungsi yang kompleks.
